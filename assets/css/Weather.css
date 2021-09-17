@@ -1,7 +1,54 @@
-.cities {
+.header {
+    text-align:center;
+    font-size: 64px;
+    color: white;
+    background-color: blue;
+    height: 100px;
+}
+.content {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 40px;
+}
+.citySelect {
+    margin-left: 40px;
+}
+.cityPhoto {
+    height: 500px;
+    width: 620px;
+    border: darkblue solid 5px;
+}
+.cities {
+    margin-left: 100px;
+    margin-top: 30px;
+    display: flex;
+    justify-content:center;
     width: 350px;
     height: 100px;
     font-size: 48px;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    margin-left: 75px;
+}
+.cityData {
+    margin: 0 auto;
+    width: 1050px;
+    height: 400px;
+    background-color: aqua;
+    border: rgb(0, 168, 168) solid 5px;
+}
+.fiveDays {
+    display: flex;
+    flex-direction: row;
+}
+.day {
+    background-color: cadetblue;
+    border: rgb(39, 70, 71) solid 5px;
+    height: 240px;
+    width: 180px;
+    margin: 10px;
+    border-radius: 5px;
 }
