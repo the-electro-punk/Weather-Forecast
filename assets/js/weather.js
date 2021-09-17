@@ -6,7 +6,7 @@ var APIkey =
 // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + {lat} + "&lon=" + {lon} + "&exclude=" + {part} + "&appid=" + {APIkey}
 
 // )
-fetch("https://api.openweathermap.org/data/2.5/onecall?lat=36.162&lon=86.7816&exclude=minutely&appid=jfmndjdskjdj"
+fetch("https://api.openweathermap.org/data/2.5/onecall?lat=36.162&lon=86.7816&exclude=minutely&appid=004b2d41992a3c0f4120565536b7c749"
 
 )
 
