@@ -12,17 +12,36 @@
 // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + {lat} + "&lon=" + {lon} + "&exclude=" + {part} + "&appid=" + {APIkey}
 
 // )
-var cityName = "Nashville"
+
 var APIkey = '0785e2597394b5d41a6d4cfe9160b61e'
-fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&appid=${APIkey}`
-)
-.then(function(response) {
-    return response.json();
-})
-.then(function(response) {
-    console.log("lat is " + response[0].lat)
-    console.log("lon is " + response[0].lon)
-})
+const searchBTN = document.getElementById('searchBTN')
+
+searchBTN.addEventListener('click', searchCity)
+
+function searchCity () {
+    var cityName = document.getElementById("searchBar").value
+    console.log(cityName)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&appid=${APIkey}`
+    )
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(response) {        
+        var latitude = response[0].lat
+        var longitude = response[0].lon
+        console.log("latitude is " + latitude)
+        console.log("longitude is " + longitude)
+        
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude},&lon=${longitude},&appid=${APIkey}`
+        )
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(response) {
+            console.log("weather" + response)
+        })
+    })
+}
 
 // fetch(
 //   'https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN' + serchterm + '&rating=' + rating + '&API_key=004b2d41992a3c0f4120565536b7c749'
