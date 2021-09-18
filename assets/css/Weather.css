@@ -10,7 +10,20 @@
     flex-direction: row;
     margin-top: 40px;
 }
-.citySelect {
+.search {
+    display: flex;
+
+}
+.searchBar {
+    margin-left: 20px;
+    width: 620px;
+    height: 100px;
+    font-size: 48px;
+}
+.citySearch {
+
+}
+/* .citySelect {
     margin-left: 40px;
 }
 .cityPhoto {
@@ -26,7 +39,7 @@
     width: 350px;
     height: 100px;
     font-size: 48px;
-}
+} */
 
 .weather {
     display: flex;
