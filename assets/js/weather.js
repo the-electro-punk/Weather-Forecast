@@ -1,24 +1,31 @@
 // API key https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-var lat = 36.1627
-var lon = 86.7816
-var APIkey = 
+// var lat = 36.1627
+// var lon = 86.7816
+
+// APIkey = 004b2d41992a3c0f4120565536b7c749
+// let cities = document.getElementById("citiesChoice")
+// let results = cities.options[cities.selectedIndex].value
+// console.log(results)
+
+// var forecast = "https://api.openweathermap.org/data/2.5/onecall?lat="${lat}"&lon="${lon}"&appid="${APIkey}
 
 // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + {lat} + "&lon=" + {lon} + "&exclude=" + {part} + "&appid=" + {APIkey}
 
 // )
-fetch("https://api.openweathermap.org/data/2.5/onecall?lat=36.162&lon=86.7816&exclude=minutely&appid=004b2d41992a3c0f4120565536b7c749"
-
+var cityName = "Nashville"
+var APIkey = '0785e2597394b5d41a6d4cfe9160b61e'
+fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&appid=${APIkey}`
 )
-
 .then(function(response) {
     return response.json();
 })
 .then(function(response) {
-    console.log("Nashville response is " + response)
+    console.log("lat is " + response[0].lat)
+    console.log("lon is " + response[0].lon)
 })
 
 // fetch(
-//   'https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN' + serchterm + '&rating=' + rating + '&API_key=jfmndjdskjdj'
+//   'https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN' + serchterm + '&rating=' + rating + '&API_key=004b2d41992a3c0f4120565536b7c749'
 //   )
 //     // Converts the response to JSON
 //     .then(function(response) {
@@ -26,3 +33,11 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat=36.162&lon=86.7816&ex
 //     })
 //     .then(function(response) {
 //       console.log(response)
+
+
+// change to search??/build card in JS and append to container??
+
+// get in process of APIkey being a var (later don't want API in code later on)
+
+// object as database that stores any data (strings, numbers, arrays, etc.) (branches out)
+// array is a linear line (0-infinite)
