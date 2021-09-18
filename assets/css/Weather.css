@@ -11,17 +11,36 @@
     margin-top: 40px;
 }
 .search {
+    margin-left: 20px;
     display: flex;
+    flex-direction: column;
 
 }
+h2 {
+    font-size: 48px;
+    font-weight:bold;
+    text-align: center;
+    background-color:darkcyan;
+    padding:5px;
+    margin-top: -10px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
 .searchBar {
-    margin-left: 20px;
     width: 620px;
     height: 100px;
     font-size: 48px;
 }
+.searchBTN {
+    margin: 10px;
+    width: 250px;
+    height: 80px;
+    background-color:blue;
+}
 .citySearch {
-
+    width: 620px;
+    height: 500px;
+    background-color: cadetblue;
 }
 /* .citySelect {
     margin-left: 40px;
