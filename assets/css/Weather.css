@@ -66,6 +66,8 @@ h2 {
     margin-left: 75px;
 }
 .cityData {
+    color: black;
+    font-size: 36px;
     margin: 0 auto;
     width: 1050px;
     height: 400px;
