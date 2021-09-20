@@ -14,8 +14,11 @@
 // )
 
 var APIkey = '0785e2597394b5d41a6d4cfe9160b61e'
-// const searchBTN = document.getElementById('searchBTN')
-let cityData = document.getElementById('cityData')
+const searchBTN = document.getElementById('searchBTN')
+var cityData = document.getElementById('cityData')
+var cityList = document.getElementById("citySearch")
+
+var cityStorage = window.localStorage
 
 searchBTN.addEventListener('click', searchCity)
 
@@ -26,6 +29,17 @@ function searchCity () {
         window.alert("type in a city")
     }
     console.log(cityName)
+
+    // this stores the city names that have previously been searched
+    var new_city_data = document.getElementById("searchBar").value
+    if(cityStorage.getItem('data')===null){
+        cityStorage.setItem('data', '[]')
+    }
+    old_city_data = JSON.parse(cityStorage.getItem('data'))
+    old_city_data.push(new_city_data)
+
+    cityStorage.setItem('data', JSON.stringify(old_city_data))
+
     // this API key obtains the latitude and longitude of the city so to gather the weather forecast
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},&appid=${APIkey}`
     )
@@ -37,7 +51,14 @@ function searchCity () {
         var longitude = response[0].lon
         console.log("latitude is " + latitude)
         console.log("longitude is " + longitude)
-        console.log(response)
+
+        // this adds the city's data to the main page
+        cityData.textContent = cityName.concat(" latitude: " + latitude).concat(" longitude: " + longitude)
+
+        // this adds the city name to list of searched cities
+        // cityList.appendChild(cityName)
+        
+        
         // this uses the latitude and longitude to gather the weather data of the particular city
         // for some reason, I keep getting bad requests from this API key and suspect it may not be functional
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude},&lon=${longitude},&appid=${APIkey}`
@@ -86,3 +107,6 @@ function searchCity () {
 
 // object as database that stores any data (strings, numbers, arrays, etc.) (branches out)
 // array is a linear line (0-infinite)
+
+
+// https://www.youtube.com/watch?v=2hJ1rTANVnk&ab_channel=%7BRhymBil%7D
