@@ -30,7 +30,7 @@ function searchCity () {
     }
     console.log(cityName)
 
-    // this stores the city names that have previously been searched
+    // this stores the city names that have previously been searched within local storage
     var new_city_data = document.getElementById("searchBar").value
     if(cityStorage.getItem('data')===null){
         cityStorage.setItem('data', '[]')
